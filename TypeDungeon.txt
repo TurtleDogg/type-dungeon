@@ -1,0 +1,42 @@
+﻿#include <iostream>
+#include <string>
+#include <time.h>
+#include <stdlib.h> 
+#include <thread>
+#include <chrono>
+#include <algorithm>
+
+void levelOne(){
+    std::string answer;
+    int timeToFinish;
+    std::cout << "This is level 1." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    std::cout << "You enter the dungeon. The first room is dark and dreary, you see vague sillhouettes on the roof - a bat flies at you." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    std::cout << "Type 'SLICE' to swing at it with your sword." << std::endl;
+    std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
+    std::cin >> answer;
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+    timeToFinish = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+    std::transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+    if (answer == "slice" and timeToFinish <= 3){
+        std::cout << "Level 1 completed. You typed it in " << timeToFinish << " seconds! That's fast." << std::endl;
+    }
+    else if (answer != "slice"){
+        std::cout << "You typed it incorrectly" <<std::endl;
+    }
+    else if (timeToFinish > 3){
+        std::cout << "Level 1 failed. You typed it in " << timeToFinish << " seconds. Not fast enough." << std::endl;
+    }
+    
+}
+
+
+int main()
+{
+  std::string name;
+  std::cout << "This is the typing dungeon. You must type to survive. \nWhat is your name adventurer? ";
+  std::cin>>name;
+  std::cout << "Hello, " << name << "!\nLets get started.\n";
+  levelOne();
+}
