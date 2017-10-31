@@ -1,4 +1,4 @@
-﻿﻿#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <time.h>
 #include <stdlib.h> 
@@ -21,7 +21,7 @@ void levelOne(){
     timeToFinish = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
     std::transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
     if (answer == "slice" and timeToFinish <= 3){
-        std::cout << "Level 1 completed. You typed it in " << timeToFinish << " seconds! That's fast." << std::endl;
+        std::cout << "Level 1 completed. You typed it in " << timeToFinish << " seconds! That's fast. The bat disappears into dust before the sword makes contact." << std::endl;
     }
     else if (answer != "slice"){
         std::cout << "You typed it incorrectly." <<std::endl;
@@ -38,7 +38,7 @@ void levelTwo(){
     int timeToFinish;
     std::cout << "This is level 2." << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(3));
-    std::cout << "The bat disappears into dust before the sword makes contact. You walk further into the cave and see a large rusted door. As you walk towards it, you step on a pressure plate and realise it was a trap." << std::endl;
+    std::cout << "You walk further into the cave and see a large rusted door. As you walk towards it, you step on a pressure plate and realise it was a trap." << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(5));
     std::cout << "Type 'DODGE_FAST' to dodge the arrow trap." << std::endl;
     std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
@@ -65,7 +65,7 @@ void levelThreePartA(){
     int timeToFinish;
     std::cout << "This is level 3." << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(3));
-    std::cout << "You continue on, you get to a large door - before you open two skeleton warriors burst through it. " << std::endl;
+    std::cout << "You continue on, you get to the large door - before you open two skeleton warriors burst through it. " << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(5));
     std::cout << "The first skeleton warrior swings his might axe. Type 'PARRY' to parry the blow." << std::endl;
     std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
@@ -90,7 +90,7 @@ void levelThreePartB(){
     std::string answer;
     int timeToFinish;
     std::this_thread::sleep_for(std::chrono::seconds(3));
-    std::cout << "The second skeleton warrior is caught by surprise and falls on the skull of his comrade, he swings at your feet. Type 'JUMP' to parry the blow." << std::endl;
+    std::cout << "The second skeleton warrior is caught by surprise and falls on the skull of his comrade, he swings at your feet.\nType 'JUMP' to parry the blow." << std::endl;
     std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
     std::cin >> answer;
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
@@ -108,6 +108,32 @@ void levelThreePartB(){
         quick_exit(EXIT_SUCCESS);
     }
 }
+void levelFour(){
+    std::string answer;
+    int timeToFinish;
+    std::cout << "This is level 4." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    std::cout << "The Skeletons seem to turn the dust similar to the bats. You continue through the door into a small room. The door closes behind you, the room starts to fill with water. There is a trapdoor at the top where the water is entering." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(5));
+    std::cout << "Type SWIM_FAST to get to the trap door before it closes." << std::endl;
+    std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
+    std::cin >> answer;
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+    timeToFinish = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+    std::transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+    if (answer == "swim_fast" and timeToFinish <= 3){
+        std::cout << "Level 4 completed. You typed it in " << timeToFinish << " seconds! That's fast. You swim swiftly up to the top of the chamber and go through the trap door to a dry room." << std::endl;
+    }
+    else if (answer != "dodge_fast"){
+        std::cout << "You typed it incorrectly." <<std::endl;
+        quick_exit(EXIT_SUCCESS);
+    }
+    else if (timeToFinish > 3){
+        std::cout << "Level 4 failed. You typed it in " << timeToFinish << " seconds. Not fast enough. You drown before you can prise the trap door open." << std::endl;
+        quick_exit(EXIT_SUCCESS);
+    }
+    
+}
 
 int main()
 {
@@ -115,8 +141,5 @@ int main()
   std::cout << "This is the typing dungeon. You must type to survive. \nWhat is your name adventurer? ";
   std::cin>>name;
   std::cout << "Hello, " << name << "!\nLets get started.\n";
-  levelOne();
-  levelTwo();
-  levelThreePartA();
-  levelThreePartB();
+  levelFour();
 }
