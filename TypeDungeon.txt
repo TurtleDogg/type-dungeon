@@ -24,7 +24,7 @@ void levelOne(){
         std::cout << "Level 1 completed. You typed it in " << timeToFinish << " seconds! That's fast. The bat disappears into dust before the sword makes contact." << std::endl;
     }
     else if (answer != "slice"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly. The bat bites you and infects you with a venomous disease, you die soon after." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
@@ -50,7 +50,7 @@ void levelTwo(){
         std::cout << "Level 2 completed. You typed it in " << timeToFinish << " seconds! That's fast. You quickly roll out of the way of the trap." << std::endl;
     }
     else if (answer != "dodge_fast"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly.The arrows pierce through your body and you die instantly." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
@@ -77,7 +77,7 @@ void levelThreePartA(){
         std::cout << "You typed it in " << timeToFinish << " seconds! That's fast. You block the axe and slice his bony head clean off." << std::endl;
     }
     else if (answer != "parry"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly. The axe severs your body head to toe." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
@@ -100,7 +100,7 @@ void levelThreePartB(){
         std::cout << "Level 3 completed. You typed it in " << timeToFinish << " seconds! That's fast. You jump to evade the blade and slice your sword into his bony ribcage." << std::endl;
     }
     else if (answer != "jump"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly. The skeleton slices your foot off and quickly cuts off your head." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
@@ -125,7 +125,7 @@ void levelFour(){
         std::cout << "Level 4 completed. You typed it in " << timeToFinish << " seconds! That's fast. You swim swiftly up to the top of the chamber and go through the trap door to a dry room." << std::endl;
     }
     else if (answer != "dodge_fast"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly. You drown before you can prise the trap door open." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
@@ -151,7 +151,7 @@ void levelFivePartA(){
         std::cout << "You typed it in " << timeToFinish << " seconds! That's fast. You deflect the orb off your sword, it hits the necromancer full in the face." << std::endl;
     }
     else if (answer != "deflect_quick"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly. The projectile engulfs your body and you are dead instantly." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
@@ -175,7 +175,7 @@ void levelFivePartB(){
         std::cout << "You typed it in " << timeToFinish << " seconds! That's fast. You swing your sword and the zombie's head comes clean off." << std::endl;
     }
     else if (answer != "decapitate"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly. The zombie bites you in the neck, and you finish yourself before you the zombification occurs." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
@@ -199,7 +199,7 @@ void levelFivePartC(){
         std::cout << "Level 5 and the game completed. You typed it in " << timeToFinish << " seconds! That's fast. You destroy him with one fell swoop." << std::endl;
     }
     else if (answer != "finish_him_now"){
-        std::cout << "You typed it incorrectly." <<std::endl;
+        std::cout << "You typed it incorrectly. You don't charge in time, and he knocks you out with his staff." <<std::endl;
         quick_exit(EXIT_SUCCESS);
     }
     else if (timeToFinish > 3){
